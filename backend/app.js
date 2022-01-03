@@ -2,6 +2,8 @@ const express = require('express'); // On importe express
 const app = express();
 
 const userRoutes = require('./routes/user');
+const sauceRoutes = require('./routes/sauces');
+const path = require('path');
 
 app.use(express.json()); //MIDDELWARE QUI PERMET D'EXTRAIRE LES CORPS JSON
 
@@ -22,6 +24,8 @@ mongoose.connect('mongodb+srv://Julien:x5GLRje5hZuWxKn@piiquante.grics.mongodb.n
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
+app.use('/images', express.static(path.join(__dirname, 'images'))); // Gestion de la ressource images de manière statique
 app.use('/api/auth', userRoutes); // On importe les logiques à exécuter (/api/auth/) et la route à utiliser (userRoutes)
+app.use('/api/sauces', sauceRoutes); // On importe les logiques à exécuter (/api/sauce/) et la route à utiliser (sauceRoutes)
 
 module.exports = app;
