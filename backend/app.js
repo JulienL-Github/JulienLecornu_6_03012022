@@ -26,6 +26,6 @@ mongoose.connect('mongodb+srv://Julien:x5GLRje5hZuWxKn@piiquante.grics.mongodb.n
 
 app.use('/images', express.static(path.join(__dirname, 'images'))); // Gestion de la ressource images de manière statique
 app.use('/api/auth', userRoutes); // On importe les logiques à exécuter (/api/auth/) et la route à utiliser (userRoutes)
-app.use('/api/sauces', sauceRoutes); // On importe les logiques à exécuter (/api/sauce/) et la route à utiliser (sauceRoutes)
+app.use('/api/sauces', sauceRoutes); // On importe les logiques à exécuter (/api/sauces/) et la route à utiliser (sauceRoutes)
 
 module.exports = app;

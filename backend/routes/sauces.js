@@ -9,7 +9,8 @@ const sauceCtrl = require('../controllers/sauces');
 router.post('/', auth, multer, sauceCtrl.createSauce); // AJOUT D'UNE ROUTE POST POUR AJOUTER UNE NOUVELLE SAUCE
 router.put('/:id', auth, sauceCtrl.modifySauce); // AJOUT D'UNE ROUTE PUT POUR QUE L'UTILISATEUR PUISSE MODIFIER UNE SAUCE
 router.delete('/:id', auth, sauceCtrl.deleteSauce); // AJOUT D'UNE ROUTE DELETE POUR QUE L'UTILISATEUR PUISSE SUPPRIMER UNE SAUCE
-router.get('//:id', auth, sauceCtrl.getOneSauce); // AJOUT D'UNE ROUTE GET QUI RECUPERE UNE SAUCE SPECIFIQUE
+router.get('/:id', auth, sauceCtrl.getOneSauce); // AJOUT D'UNE ROUTE GET QUI RECUPERE UNE SAUCE SPECIFIQUE
 router.get('/', auth, sauceCtrl.getAllSauce); // AJOUT D'UNE ROUTE GET POUR RECUPERER TOUTES LES SAUCES
+//router.post('/:id/like', auth, sauceCtrl.likeSauce); // AJOUT D'UNE ROUTE GET POUR LIKE/DISLIKER LES SAUCES
 
 module.exports = router; // On exporte le router de ce fichier
